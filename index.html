@@ -5,31 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Tracker Dashboard</title>
     <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
-    <style>
-        .stats-box {
-            background-color: #f3f3f3;
-            padding: 1rem;
-            border-radius: 5px;
-            border-left: 5px solid #4a4a4a;
-            margin-bottom: 2rem;
-        }
-        .form-section {
-            background: #fafafa;
-            padding: 1.5rem;
-            border: 1px solid #eee;
-            border-radius: 8px;
-        }
-        .action-bar {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 1rem;
-        }
-        input[type="text"], input[type="url"], input[type="date"] { width: 100%; }
-        .record-item { margin-bottom: 0.5rem; border-bottom: 1px solid #eee; padding-bottom: 5px; }
-        footer { margin-top: 2rem; font-size: 0.8rem; text-align: center; color: #666; }
-        /* Simple helper to hide the message when list is full */
-        .hidden { display: none; }
-    </style>
+    <link rel="stylesheet", href="./assets/CSS/style.css">
 </head>
 <body>
 
@@ -65,7 +41,7 @@
         <section>
             <h3>Search & Review</h3>
             <div class="action-bar">
-                <input type="text" id="search-input" placeholder="Search company name...">
+                <input type="text" id="search-input" placeholder="Search company name..." autocomplete="off">
                 <button id="btn-search">Search</button>
                 <button id="btn-show-all">Show All</button>
             </div>
@@ -81,96 +57,6 @@
         <p>Personal Job Tracker &copy; 2026</p>
     </footer>
 
-    <script>
-        const API_BASE = "http://localhost:8787";
-
-        const recordsList = document.querySelector("#records-list");
-        const placeholder = document.querySelector("#placeholder-text");
-        const addForm = document.querySelector("#add-form");
-        const btnSearch = document.querySelector("#btn-search");
-        const btnShowAll = document.querySelector("#btn-show-all");
-        const totalSpan = document.querySelector("#total-count");
-
-        const renderItems = function(dataArray) {
-            recordsList.innerHTML = "";
-
-            if (!dataArray || dataArray.length === 0) {
-                placeholder.innerText = "No records found.";
-                placeholder.classList.remove("hidden");
-                totalSpan.innerText = "0";
-                return;
-            }
-
-            // Hide the placeholder and show the list
-            placeholder.classList.add("hidden");
-
-            dataArray.forEach(function(item) {
-                const li = document.createElement("li");
-                li.className = "record-item";
-                li.innerHTML = "<strong>" + item.companyname + "</strong> - " + item.position +
-                               "<br><small>" + (item.appldate || 'No Date') + " | Status: " + item.status + "</small>";
-                recordsList.appendChild(li);
-            });
-
-            totalSpan.innerText = dataArray.length;
-        };
-
-        const loadAll = async function() {
-            try {
-                const res = await fetch(API_BASE + "/api/get-appl");
-                const json = await res.json();
-                renderItems(json.data);
-            } catch (err) {
-                console.error("Fetch failed:", err);
-            }
-        };
-
-        const searchCompany = async function() {
-            const q = document.querySelector("#search-input").value;
-            if (!q) return;
-            try {
-                const res = await fetch(API_BASE + "/api/search?q=" + q);
-                const json = await res.json();
-                renderItems(json.data);
-            }
-            catch (error) {
-                console.error("Search failed:", error);
-            }
-        };
-
-        addForm.addEventListener("submit", async function(e) {
-            e.preventDefault();
-            const payload = {
-                companyname: document.querySelector("#company-name").value,
-                position: document.querySelector("#position").value,
-                appldate: document.querySelector("#appl-date").value || null,
-                url: document.querySelector("#url").value
-            };
-
-            try {
-                const res = await fetch(API_BASE + "/api/apply", {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                if (res.ok) {
-                    addForm.reset();
-                    alert("Record added successfully!");
-                }
-            } catch (err) {
-                console.error("Submission failed:", err);
-            }
-        });
-
-        btnShowAll.addEventListener("click", function() {
-            loadAll();
-        });
-
-        btnSearch.addEventListener("click", function() {
-            searchCompany();
-        });
-
-    </script>
+    <script src="./assets/JS/script.js"></script>
 </body>
 </html>

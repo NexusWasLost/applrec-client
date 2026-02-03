@@ -4,7 +4,7 @@ export async function onRequest(context){
     //get the password from browser's request
     const auth = request.headers.get("Authorization");
 
-    const expectedAuth = "Basic " + btoa(`admin:${ env.MY_PASS }`);
+    const expectedAuth = "Basic " + btoa(`${ env.MY_USERNAME }:${ env.MY_PASS }`);
 
     //check if the auth headers match with the expected auth string
     if(auth !== expectedAuth){

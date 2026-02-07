@@ -1,0 +1,16 @@
+.page-hint {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+#load-status {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Optional visual distinction for destructive/escape action */
+button.danger {
+    background-color: #eee;
+    color: #444;
+}

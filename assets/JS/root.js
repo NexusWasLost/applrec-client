@@ -3,8 +3,8 @@ export const API_BASE = "https://applrec-serv.qe7.workers.dev";
 export const formatDate = function (rawDate) {
     if (!rawDate) return "-";
 
-    const formattedDate = new Date(rawDate).toLocaleDateString(undefined, {
-        timeZone: "UTC",
+    const formattedDate = new Date(rawDate).toLocaleDateString(undefined,
+    {
         dateStyle: "medium"
     });
 

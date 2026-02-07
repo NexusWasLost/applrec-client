@@ -1,5 +1,4 @@
-// const API_BASE = "https://applrec-serv.qe7.workers.dev";
-export const API_BASE = "http://localhost:8787";
+export const API_BASE = "https://applrec-serv.qe7.workers.dev";
 
 export const formatDate = function (rawDate) {
     if (!rawDate) return "-";

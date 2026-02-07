@@ -16,6 +16,7 @@
         <nav class="navbar">
             <ul>
                 <li><a href="/">Home</a></li>
+                <li><a href="/add.html">Add</a></li>
                 <li><a href="/update.html">Update</a></li>
             </ul>
         </nav>
@@ -26,36 +27,17 @@
     </header>
 
     <main>
-        <section class="form-section">
-            <h3>Log New Application</h3>
-            <form id="add-form">
-                <label for="company-name">Company Name</label>
-                <input type="text" id="company-name" required placeholder="e.g. Google">
-
-                <label for="position">Position</label>
-                <input type="text" id="position" required placeholder="e.g. Systems Engineer">
-
-                <label for="appl-date">Date Applied</label>
-                <input type="date" id="appl-date">
-
-                <label for="url">Job URL</label>
-                <input type="url" id="url" placeholder="https://...">
-
-                <label for="status">Status</label>
-                <input type="text" id="status" placeholder="eg. applied">
-
-                <button type="submit" style="margin-top: 1rem; width: 100%;">Add to Database</button>
-            </form>
-        </section>
-
-        <hr>
-
         <section>
             <h3>Search & Review</h3>
             <div class="action-bar">
                 <input type="text" id="search-input" placeholder="Search company name..." autocomplete="off">
                 <button id="btn-search">Search</button>
                 <button id="btn-show-all">Show All</button>
+            </div>
+
+            <div class="action-bar">
+                <input type="date" id="search-date" placeholder="Search by date">
+                <button id="btn-search-date">Search by Date</button>
             </div>
 
             <div id="display-area">
@@ -69,7 +51,8 @@
         <p>Personal Job Tracker &copy; 2026</p>
     </footer>
 
-    <script src="./assets/JS/script.js"></script>
+    <script src="./assets/JS/root.js" type="module"></script>
+    <script src="./assets/JS/script.js" type="module"></script>
 </body>
 
 </html>

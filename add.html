@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
+    <link rel="stylesheet" , href="./assets/CSS/root.css">
+    <link rel="stylesheet" , href="./assets/CSS/add.css">
+    <title>Applrec</title>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/add.html">Add</a></li>
+                <li><a href="/update.html">Update</a></li>
+            </ul>
+        </nav>
+        <h1>Application Records</h1>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h3>Log New Application</h3>
+            <form id="add-form">
+                <label for="company-name">Company Name</label>
+                <input type="text" id="company-name" required placeholder="e.g. Google">
+
+                <label for="position">Position</label>
+                <input type="text" id="position" required placeholder="e.g. Systems Engineer">
+
+                <label for="appl-date">Date Applied</label>
+                <input type="date" id="appl-date">
+
+                <label for="url">Job URL</label>
+                <input type="url" id="url" placeholder="https://...">
+
+                <label for="status">Status</label>
+                <input type="text" id="status" placeholder="eg. applied">
+
+                <button type="submit" style="margin-top: 1rem; width: 100%;">Add to Database</button>
+            </form>
+        </section>
+
+    <footer>
+        <p>Personal Job Tracker &copy; 2026</p>
+    </footer>
+
+    <script src="./assets/JS/root.js" type="module"></script>
+    <script src="./assets/JS/add.js" type="module"></script>
+</body>
+
+</html>

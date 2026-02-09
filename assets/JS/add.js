@@ -9,7 +9,8 @@ addForm.addEventListener("submit", async function (e) {
         position: document.querySelector("#position").value,
         appldate: document.querySelector("#appl-date").value || null,
         url: document.querySelector("#url").value,
-        status: document.querySelector("#status").value || "applied"
+        status: document.querySelector("#status").value || "applied",
+        notes: document.querySelector("#notes").value || null
     };
 
     try {

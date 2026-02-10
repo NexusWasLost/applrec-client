@@ -29,10 +29,14 @@ export const renderItems = function (dataArray, placeholder, recordsList, total)
         item.appldate = formatDate(item.appldate);
 
         const li = document.createElement("li");
+        li.setAttribute("data-value", item.appl_id);
         li.className = "record-item";
         li.innerHTML = "<strong>" + item.companyname + "</strong> - " + item.position +
-            "<br><small>" + (item.appldate || 'No Date') + " | Status: " + item.status + "</small>";
-        recordsList.appendChild(li);
+            "<br><small>" + (item.appldate || 'No Date') + " | Status: " + item.status + "</small>" +
+            "<br><small>Link: " + (item.url) + "</small>" +
+            "<br><small>Notes: " + (item.notes || 'N/A') + "</small>";
+
+            recordsList.appendChild(li);
     });
 
     total.innerText = dataArray.length;

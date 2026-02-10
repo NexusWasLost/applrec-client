@@ -27,7 +27,7 @@ const searchCompany = async function () {
         const json = await res.json();
 
         if (typeof json.data !== "object") {
-            alert(json.message);
+            alert(json.data);
             return;
         }
 

@@ -31,12 +31,15 @@ export const renderItems = function (dataArray, placeholder, recordsList, total)
         const li = document.createElement("li");
         li.setAttribute("data-value", item.appl_id);
         li.className = "record-item";
-        li.innerHTML = "<strong>" + item.companyname + "</strong> - " + item.position +
-            "<br><small>" + (item.appldate || 'No Date') + " | Status: " + item.status + "</small>" +
-            "<br><small>Link: " + (item.url) + "</small>" +
-            "<br><small>Notes: " + (item.notes || 'N/A') + "</small>";
 
-            recordsList.appendChild(li);
+        li.innerHTML = `
+        <strong>${ item.companyname }</strong> - ${ item.position }
+        <br><small>${ (item.appldate || "No Date") } | Status: ${ item.status }</small>
+        <br><small>Link: <a href = ${ item.url } target = "_blank">${ item.url }</a></small>
+        <br><small>Notes: ${ (item.notes || "N/A") }</small>
+        `;
+
+        recordsList.appendChild(li);
     });
 
     total.innerText = dataArray.length;

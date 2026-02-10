@@ -33,10 +33,10 @@ export const renderItems = function (dataArray, placeholder, recordsList, total)
         li.className = "record-item";
 
         li.innerHTML = `
-        <strong>${item.companyname}</strong> - ${item.position}
-        <br><small>${item.appldate || "No Date"} | Status: ${item.status}</small>
-        <br><small>Link: <a href="${item.url}" target="_blank" rel="noopener">${item.url}</a></small>
-        <br><small>Notes: ${item.notes || "N/A"}</small>
+        <strong>${ item.companyname }</strong> - ${ item.position }
+        <br><small>${ item.appldate || "No Date" } | Status: ${ item.status }</small>
+        <br><small>Link: <a href="${ item.url }" target="_blank" rel="noopener">${ item.url }</a></small>
+        <br><small>Notes: ${ item.notes || "N/A" }</small>
         <br><a href="/update.html?id=${ li.getAttribute("data-id") }">Update</a> | <a href="">Delete</a>
         `;
 

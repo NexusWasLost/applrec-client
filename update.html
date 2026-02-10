@@ -28,21 +28,7 @@
 
     <main>
         <section class="form-section">
-            <h3>Find Application</h3>
-
-            <div class="action-bar">
-                <input type="text" id="search-company" placeholder="Search by company name..." autocomplete="off">
-                <button id="btn-load">Load</button>
-            </div>
-
-            <p id="load-status" class="hidden"></p>
-        </section>
-
-        <hr>
-
-        <section class="form-section hidden" id="update-section">
-            <h3>Update Details</h3>
-
+            <h3>Update Existing Application</h3>
             <form id="update-form">
                 <label for="company-name">Company Name</label>
                 <input type="text" id="company-name" required>
@@ -59,12 +45,10 @@
                 <label for="status">Status</label>
                 <input type="text" id="status">
 
-                <div class="action-bar">
-                    <button type="submit">Update</button>
-                    <button type="button" class="danger" id="btn-cancel">
-                        Cancel
-                    </button>
-                </div>
+                <label for="notes">Notes</label>
+                <input type="text" id="notes">
+
+                <button type="submit" style="margin-top: 1rem; width: 100%;">Update</button>
             </form>
         </section>
     </main>
@@ -73,7 +57,8 @@
         <p>Personal Job Tracker &copy; 2026</p>
     </footer>
 
-    <script src="./assets/JS/update.js"></script>
+    <script type="module" src="./assets/JS/root.js"></script>
+    <script type="module" src="./assets/JS/update.js"></script>
 </body>
 
 </html>

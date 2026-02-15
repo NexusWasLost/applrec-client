@@ -11,6 +11,13 @@ export const formatDate = function (rawDate) {
     return formattedDate;
 }
 
+export function getId(){
+    const url = window.location.search;
+    const urlParams = new URLSearchParams(url);
+    const id = urlParams.get("id");
+    return id;
+}
+
 export const renderItems = function (dataArray, placeholder, recordsList, total) {
     recordsList.innerHTML = "";
 
@@ -37,7 +44,7 @@ export const renderItems = function (dataArray, placeholder, recordsList, total)
         <br><small>${ item.appldate || "No Date" } | Status: ${ item.status }</small>
         <br><small>Link: <a href="${ item.url }" target="_blank" rel="noopener">${ item.url }</a></small>
         <br><small>Notes: ${ item.notes || "N/A" }</small>
-        <br><a href="/update.html?id=${ li.getAttribute("data-id") }">Update</a> | <a href="">Delete</a>
+        <br><a href="/update.html?id=${ li.getAttribute("data-id") }">Update</a> | <a href="/delete.html?id=${ li.getAttribute("data-id") }">Delete</a>
         `;
 
         recordsList.appendChild(li);

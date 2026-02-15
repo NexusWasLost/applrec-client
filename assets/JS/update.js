@@ -1,13 +1,6 @@
-import { API_BASE } from "./root.js";
+import { API_BASE, getId } from "./root.js";
 
 const updateForm = document.querySelector("#update-form");
-
-function getId(){
-    const url = window.location.search;
-    const urlParams = new URLSearchParams(url);
-    const id = urlParams.get("id");
-    return id;
-}
 
 window.addEventListener("load", async function () {
 

@@ -4,11 +4,14 @@ input[type="date"] {
     width: 100%;
 }
 
+*{
+    color: #C6C1B9 !important;
+}
+
 footer {
     margin-top: 2rem;
     font-size: 0.8rem;
     text-align: center;
-    color: #666;
 }
 
 /* Simple helper to hide the message when list is full */
@@ -39,4 +42,12 @@ footer {
 
 ol{
     padding: 2rem 1.5rem 2rem 1.5rem;
+}
+
+button{
+    background-color: #2a2a2a !important;
+}
+
+button:hover{
+    opacity: 75% !important;
 }
